@@ -8,6 +8,12 @@ class Logger {
 
   public static getInstance() {
     // TODO: Implement the Singleton pattern here
+    // Check if the instance already exists
+    if (!Logger.instance) {
+      // If it doesn't exist, create a new instance
+      Logger.instance = new Logger();
+    }
+    return Logger.instance;
   }
 
   public log(message: string): void {
