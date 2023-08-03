@@ -1,5 +1,5 @@
-import Logger from './logger'
-import ProductFactory from './productFactory'
+// import Logger from './logger'
+// import ProductFactory from './productFactory'
 import Facade from './facade'
 
 // const logger1 = Logger.getInstance()
@@ -14,25 +14,25 @@ import Facade from './facade'
 
 // Iteration 2:
 
-const factory = new ProductFactory()
+// const factory = new ProductFactory()
 
-const productA = factory.createProduct('A')
-const productB = factory.createProduct('B')
+// const productA = factory.createProduct('A')
+// const productB = factory.createProduct('B')
 
-console.log(productA.operation())
-console.log(productB.operation())
+// console.log(productA.operation())
+// console.log(productB.operation())
 
 // Iteration 3:
 
-// const facade = new Facade();
+const facade = new Facade()
 
-// const resultA = facade.operationA();
-// const resultB = facade.operationB();
-// const resultC = facade.operationC();
+const resultA = facade.operationA()
+const resultB = facade.operationB()
+const resultC = facade.operationC()
 
-// console.log(resultA); // Output: "SubsystemA: operation A1. SubsystemA: operation A2."
-// console.log(resultB); // Output: "SubsystemB: operation B1. SubsystemB: operation B2."
-// console.log(resultC);
+console.log(resultA)
+console.log(resultB)
+console.log(resultC)
 
 // Iteration 4:
 

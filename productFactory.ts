@@ -1,8 +1,8 @@
 import { ConcreteProductA, ConcreteProductB, Product } from './product'
 
-type ProductT = 'A' | 'B'
+export type ProductT = 'A' | 'B'
 
-abstract class ProductFactoryCreator {
+export abstract class ProductFactoryCreator {
   abstract createProduct(type: ProductT): Product
 }
 
