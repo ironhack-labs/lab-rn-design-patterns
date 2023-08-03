@@ -15,13 +15,13 @@ logger2.printLogs();
 
 // Iteration 2:
 
-// const factory = new ProductFactory();
+const factory = new ProductFactory();
 
-// const productA = factory.createProduct('A');
-// const productB = factory.createProduct('B');
+const productA = factory.createProduct('A');
+const productB = factory.createProduct('B');
 
-// console.log(productA.operation()); // Output: "Result of ConcreteProductA."
-// console.log(productB.operation()); // Output: "Result of ConcreteProductB."
+console.log(productA.operation()); // Output: "Result of ConcreteProductA."
+console.log(productB.operation()); // Output: "Result of ConcreteProductB."
 
 // // Iteration 3:
 
