@@ -1,7 +1,19 @@
-// TODO: Implement the ProductFactory class using the Factory pattern
+import { ConcreteProductA, ConcreteProductB, Product } from './product'
 
-class ProductFactory {
-  // TODO: Implement the factory method that creates and returns Product instances
+export type ProductT = 'A' | 'B'
+
+export abstract class ProductFactoryCreator {
+  abstract createProduct(type: ProductT): Product
 }
 
-export default ProductFactory;
+class ProductFactory extends ProductFactoryCreator {
+  createProduct (type: ProductT) {
+    if (type === 'A') {
+      return new ConcreteProductA()
+    }
+
+    return new ConcreteProductB()
+  }
+}
+
+export default ProductFactory
