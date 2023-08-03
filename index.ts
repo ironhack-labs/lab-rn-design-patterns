@@ -24,17 +24,18 @@ const productB = factory.createProduct("B");
 console.log(productA.operation()); // Output: "Result of ConcreteProductA."
 console.log(productB.operation()); // Output: "Result of ConcreteProductB."
 
-// // Iteration 3:
+// Iteration 3:
+console.log("-".repeat(10), "Iteration 3", "-".repeat(10));
 
-// const facade = new Facade();
+const facade = new Facade();
 
-// const resultA = facade.operationA();
-// const resultB = facade.operationB();
-// const resultC = facade.operationC();
+const resultA = facade.operationA();
+const resultB = facade.operationB();
+const resultC = facade.operationC();
 
-// console.log(resultA); // Output: "SubsystemA: operation A1. SubsystemA: operation A2."
-// console.log(resultB); // Output: "SubsystemB: operation B1. SubsystemB: operation B2."
-// console.log(resultC);
+console.log(resultA); // Output: "SubsystemA: operation A1. SubsystemA: operation A2."
+console.log(resultB); // Output: "SubsystemB: operation B1. SubsystemB: operation B2."
+console.log(resultC); // Output: "SubsystemC: operation C1. SubsystemC: operation C2."
 
 // // Iteration 4:
 
