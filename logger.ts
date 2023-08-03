@@ -6,8 +6,11 @@ class Logger {
     this.logs = [];
   }
 
-  public static getInstance() {
-    // TODO: Implement the Singleton pattern here
+  public static getInstance(): Logger {
+    if (!Logger.instance) {
+      Logger.instance = new Logger();
+    }
+    return Logger.instance;
   }
 
   public log(message: string): void {
