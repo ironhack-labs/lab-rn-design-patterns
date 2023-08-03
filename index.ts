@@ -1,6 +1,7 @@
 import Logger from './logger';
 import ProductFactory from './productFactory';
 import Facade from './facade';
+import { Observer, Subject } from './observer';
 
 
 const logger1 = Logger.getInstance();
