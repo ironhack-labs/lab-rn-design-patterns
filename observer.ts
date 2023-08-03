@@ -1,20 +1,28 @@
-interface Observer {
-  update(data: any): void;
+export interface Observer {
+  update(data: undefined): void;
 }
 
-class Subject {
+export class Subject {
   private observers: Observer[] = [];
 
+  // Agregamos nuestro metodo para el observer de la lista.
   public addObserver(observer: Observer): void {
-    // TODO: Implement this method to add an observer to the list
+    this.observers.push(observer);
   }
 
+  // Agregamos metodo para remover el observer de la lista.
   public removeObserver(observer: Observer): void {
-    // TODO: Implement this method to remove an observer from the list
+    const index = this.observers.indexOf(observer);
+    if (index !== -1) {
+      this.observers.splice(index, 1);
+    }
   }
 
+  // Agregamos nuestro metodo para hacer update del observer.
   public notifyObservers(data: any): void {
-    // TODO: Implement this method to notify all observers
+    for (const observer of this.observers) {
+      observer.update(data);
+    }
   }
 
   public someBusinessLogic(): void {
