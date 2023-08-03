@@ -1,9 +1,9 @@
-class SubsystemC {
+export class SubsystemC {
   public operationC1(): string {
-    return "SubsystemC: operation C1.";
+    return 'SubsystemC: operation C1.'
   }
 
   public operationC2(): string {
-    return "SubsystemC: operation C2.";
+    return 'SubsystemC: operation C2.'
   }
 }
