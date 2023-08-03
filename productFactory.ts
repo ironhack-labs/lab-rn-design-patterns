@@ -1,3 +1,5 @@
+import { ConcreteProductA, ConcreteProductB, Product } from './product'
+
 class ProductFactory {
   public createProduct(type: 'A' | 'B'): Product {
     switch (type) {
