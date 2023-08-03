@@ -1,6 +1,7 @@
 import Logger from "./logger";
 import ProductFactory from "./productFactory";
 import Facade from "./facade";
+import { Observer, Subject } from "./observer";
 
 console.log("-".repeat(10), "Iteration 1", "-".repeat(10));
 const logger1 = Logger.getInstance();
@@ -14,7 +15,7 @@ logger1.printLogs();
 logger2.printLogs();
 
 // Iteration 2:
-console.log("-".repeat(10), "Iteration 2", "-".repeat(10));
+console.log("\n", "-".repeat(10), "Iteration 2", "-".repeat(10));
 
 const factory = new ProductFactory();
 
@@ -25,7 +26,7 @@ console.log(productA.operation()); // Output: "Result of ConcreteProductA."
 console.log(productB.operation()); // Output: "Result of ConcreteProductB."
 
 // Iteration 3:
-console.log("-".repeat(10), "Iteration 3", "-".repeat(10));
+console.log("\n", "-".repeat(10), "Iteration 3", "-".repeat(10));
 
 const facade = new Facade();
 
@@ -37,31 +38,32 @@ console.log(resultA); // Output: "SubsystemA: operation A1. SubsystemA: operatio
 console.log(resultB); // Output: "SubsystemB: operation B1. SubsystemB: operation B2."
 console.log(resultC); // Output: "SubsystemC: operation C1. SubsystemC: operation C2."
 
-// // Iteration 4:
+// Iteration 4:
+console.log("\n", "-".repeat(10), "Iteration 4", "-".repeat(10));
 
-// class ConcreteObserver implements Observer {
-//   public update(data: any): void {
-//     console.log(`Received update with data: ${data}`);
-//   }
-// }
+class ConcreteObserver implements Observer {
+  public update(data: any): void {
+    console.log(`Received update with data: ${data}`);
+  }
+}
 
-// const subject = new Subject();
+const subject = new Subject();
 
-// const observer1 = new ConcreteObserver();
-// const observer2 = new ConcreteObserver();
+const observer1 = new ConcreteObserver();
+const observer2 = new ConcreteObserver();
 
-// subject.addObserver(observer1);
-// subject.addObserver(observer2);
+subject.addObserver(observer1);
+subject.addObserver(observer2);
 
-// subject.someBusinessLogic();
-// // Output:
-// // Doing some business logic...
-// // Received update with data: Some data to be sent to observers.
-// // Received update with data: Some data to be sent to observers.
+subject.someBusinessLogic();
+// Output:
+// Doing some business logic...
+// Received update with data: Some data to be sent to observers.
+// Received update with data: Some data to be sent to observers.
 
-// subject.removeObserver(observer1);
+subject.removeObserver(observer1);
 
-// subject.someBusinessLogic();
-// // Output:
-// // Doing some business logic...
-// // Received update with data: Some data to be sent to observers.
+subject.someBusinessLogic();
+// Output:
+// Doing some business logic...
+// Received update with data: Some data to be sent to observers.
