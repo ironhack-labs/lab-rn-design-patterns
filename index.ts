@@ -1,8 +1,8 @@
-import Logger from './logger';
+import {Logger} from './logger'; //Hacemos el export sin default para comodidad.
 import ProductFactory from './productFactory';
 import Facade from './facade';
 
-
+//Iteration 1
 const logger1 = Logger.getInstance();
 const logger2 = Logger.getInstance();
 
@@ -11,56 +11,70 @@ logger2.log("Message 1 from logger2");
 logger1.log("Message 2 from logger1");
 
 logger1.printLogs();
+//
+console.log('');//Separacion de resultados
+//
 logger2.printLogs();
 
-// Iteration 2:
+//
+console.log('');//Separacion de resultados
+//
 
-const factory = new ProductFactory();
+// // Iteration 2:
+// const factory = new ProductFactory();
 
-const productA = factory.createProduct('A');
-const productB = factory.createProduct('B');
+// const productA = factory.createProduct('A');
+// const productB = factory.createProduct('B');
 
-console.log(productA.operation()); // Output: "Result of ConcreteProductA."
-console.log(productB.operation()); // Output: "Result of ConcreteProductB."
+// console.log(productA.operation()); // Output: "Result of ConcreteProductA."
+// console.log(productB.operation()); // Output: "Result of ConcreteProductB."
 
-// Iteration 3:
+//
+console.log('');//Separacion de resultados
+//
+
+// // Iteration 3:
 
 
-const facade = new Facade();
+// const facade = new Facade();
 
-const resultA = facade.operationA();
-const resultB = facade.operationB();
-const resultC = facade.operationC();
+// const resultA = facade.operationA();
+// const resultB = facade.operationB();
+// const resultC = facade.operationC();
 
-console.log(resultA); // Output: "SubsystemA: operation A1. SubsystemA: operation A2."
-console.log(resultB); // Output: "SubsystemB: operation B1. SubsystemB: operation B2."
-console.log(resultC); 
+// console.log(resultA); // Output: "SubsystemA: operation A1. SubsystemA: operation A2."
+// console.log(resultB); // Output: "SubsystemB: operation B1. SubsystemB: operation B2."
+// console.log(resultC); 
 
-// Iteration 4: 
+//
+console.log('');//Separacion de resultados
+//
 
-class ConcreteObserver implements Observer {
-  public update(data: any): void {
-    console.log(`Received update with data: ${data}`);
-  }
-}
+// // Iteration 4: 
 
-const subject = new Subject();
+// class ConcreteObserver implements Observer {
+//   public update(data: any): void {
+//     console.log(`Received update with data: ${data}`);
+//   }
+// }
 
-const observer1 = new ConcreteObserver();
-const observer2 = new ConcreteObserver();
+// const subject = new Subject();
 
-subject.addObserver(observer1);
-subject.addObserver(observer2);
+// const observer1 = new ConcreteObserver();
+// const observer2 = new ConcreteObserver();
 
-subject.someBusinessLogic();
-// Output:
-// Doing some business logic...
-// Received update with data: Some data to be sent to observers.
-// Received update with data: Some data to be sent to observers.
+// subject.addObserver(observer1);
+// subject.addObserver(observer2);
 
-subject.removeObserver(observer1);
+// subject.someBusinessLogic();
+// // Output:
+// // Doing some business logic...
+// // Received update with data: Some data to be sent to observers.
+// // Received update with data: Some data to be sent to observers.
 
-subject.someBusinessLogic();
-// Output:
-// Doing some business logic...
-// Received update with data: Some data to be sent to observers.
+// subject.removeObserver(observer1);
+
+// subject.someBusinessLogic();
+// // Output:
+// // Doing some business logic...
+// // Received update with data: Some data to be sent to observers.
