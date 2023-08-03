@@ -13,3 +13,5 @@ class ConcreteProductB implements Product {
     return "Result of ConcreteProductB.";
   }
 }
+
+export { Product, ConcreteProductA, ConcreteProductB };
