@@ -2,25 +2,25 @@ import Logger from './logger'
 import ProductFactory from './productFactory'
 import Facade from './facade'
 
-const logger1 = Logger.getInstance()
-const logger2 = Logger.getInstance()
+// const logger1 = Logger.getInstance()
+// const logger2 = Logger.getInstance()
 
-logger1.log('Message 1 from logger1')
-logger2.log('Message 1 from logger2')
-logger1.log('Message 2 from logger1')
+// logger1.log('Message 1 from logger1')
+// logger2.log('Message 1 from logger2')
+// logger1.log('Message 2 from logger1')
 
-logger1.printLogs()
-logger2.printLogs()
+// logger1.printLogs()
+// logger2.printLogs()
 
 // Iteration 2:
 
-// const factory = new ProductFactory();
+const factory = new ProductFactory()
 
-// const productA = factory.createProduct('A');
-// const productB = factory.createProduct('B');
+const productA = factory.createProduct('A')
+const productB = factory.createProduct('B')
 
-// console.log(productA.operation()); // Output: "Result of ConcreteProductA."
-// console.log(productB.operation()); // Output: "Result of ConcreteProductB."
+console.log(productA.operation())
+console.log(productB.operation())
 
 // Iteration 3:
 
