@@ -1,5 +1,5 @@
 import {Logger} from './logger'; //Hacemos el export sin default para comodidad.
-import ProductFactory from './productFactory';
+import {ProductFactory} from './productFactory'; //Hacemos el export sin default para comodidad.
 import Facade from './facade';
 
 //Iteration 1
@@ -20,14 +20,14 @@ logger2.printLogs();
 console.log('');//Separacion de resultados
 //
 
-// // Iteration 2:
-// const factory = new ProductFactory();
+// Iteration 2:
+const factory = new ProductFactory();
 
-// const productA = factory.createProduct('A');
-// const productB = factory.createProduct('B');
+const productA = factory.createProduct('A');
+const productB = factory.createProduct('B');
 
-// console.log(productA.operation()); // Output: "Result of ConcreteProductA."
-// console.log(productB.operation()); // Output: "Result of ConcreteProductB."
+console.log(productA.operation()); // Output: "Result of ConcreteProductA."
+console.log(productB.operation()); // Output: "Result of ConcreteProductB."
 
 //
 console.log('');//Separacion de resultados
