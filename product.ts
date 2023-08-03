@@ -1,15 +1,15 @@
-interface Product {
-  operation(): string;
+export interface Product {
+  operation(): string
 }
 
-class ConcreteProductA implements Product {
+export class ConcreteProductA implements Product {
   public operation(): string {
-    return "Result of ConcreteProductA.";
+    return 'Result of ConcreteProductA.'
   }
 }
 
-class ConcreteProductB implements Product {
+export class ConcreteProductB implements Product {
   public operation(): string {
-    return "Result of ConcreteProductB.";
+    return 'Result of ConcreteProductB.'
   }
 }
