@@ -1,20 +1,34 @@
-interface Observer {
+export interface Observer {
   update(data: any): void;
 }
 
-class Subject {
+export class Subject {
   private observers: Observer[] = [];
 
   public addObserver(observer: Observer): void {
-    // TODO: Implement this method to add an observer to the list
+    const isExist = this.observers.includes(observer);
+    if(isExist) {
+      return console.log('Observer exist');
+    }
+
+    this.observers.push(observer);
   }
 
   public removeObserver(observer: Observer): void {
-    // TODO: Implement this method to remove an observer from the list
+    const observerToDelete = this.observers.indexOf(observer);
+    if(observerToDelete === -1) {
+      return console.log('Observer doesnt exists')
+    }
+
+    this.observers.splice(observerToDelete, 1);
   }
 
   public notifyObservers(data: any): void {
-    // TODO: Implement this method to notify all observers
+    if(this.observers.length === 0) {
+      return console.log('No observers')
+    }
+
+    this.observers.forEach(observer => observer.update(data));
   }
 
   public someBusinessLogic(): void {

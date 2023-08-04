@@ -1,5 +1,7 @@
 // TODO: Implement the ProductFactory class using the Factory pattern
 
+import { ConcreteProductA, ConcreteProductB, Product } from "./product";
+
 class ProductFactory {
   public createProduct(type: string): Product {
     switch(type) {
