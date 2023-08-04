@@ -1,8 +1,9 @@
 import Logger from './logger';
 import ProductFactory from './productFactory';
 import Facade from './facade';
+import { Subject, Observer } from './observer';
 
-
+// Iteration 1:
 const logger1 = Logger.getInstance();
 const logger2 = Logger.getInstance();
 
@@ -14,7 +15,6 @@ logger1.printLogs();
 logger2.printLogs();
 
 // Iteration 2:
-
 const factory = new ProductFactory();
 
 const productA = factory.createProduct('A');
@@ -24,8 +24,6 @@ console.log(productA.operation()); // Output: "Result of ConcreteProductA."
 console.log(productB.operation()); // Output: "Result of ConcreteProductB."
 
 // Iteration 3:
-
-
 const facade = new Facade();
 
 const resultA = facade.operationA();
@@ -34,10 +32,9 @@ const resultC = facade.operationC();
 
 console.log(resultA); // Output: "SubsystemA: operation A1. SubsystemA: operation A2."
 console.log(resultB); // Output: "SubsystemB: operation B1. SubsystemB: operation B2."
-console.log(resultC); 
+console.log(resultC);
 
-// Iteration 4: 
-
+// Iteration 4:
 class ConcreteObserver implements Observer {
   public update(data: any): void {
     console.log(`Received update with data: ${data}`);
