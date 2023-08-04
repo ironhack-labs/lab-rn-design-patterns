@@ -1,6 +1,8 @@
 import Logger from './logger';
 import ProductFactory from './productFactory';
 import Facade from './facade';
+import { Observer, Subject } from './observer';
+
 
 
 const logger1 = Logger.getInstance();
@@ -34,7 +36,7 @@ const resultC = facade.operationC();
 
 console.log(resultA); // Output: "SubsystemA: operation A1. SubsystemA: operation A2."
 console.log(resultB); // Output: "SubsystemB: operation B1. SubsystemB: operation B2."
-console.log(resultC); 
+console.log(resultC);
 
 // Iteration 4: 
 
