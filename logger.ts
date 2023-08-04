@@ -7,7 +7,11 @@ class Logger {
   }
 
   public static getInstance() {
-    // TODO: Implement the Singleton pattern here
+    if(!this.instance) {
+      this.instance = new Logger();
+    }
+
+    return this.instance;
   }
 
   public log(message: string): void {
