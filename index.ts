@@ -1,7 +1,7 @@
 import Logger from "./logger";
 import ProductFactory from "./productFactory";
 import Facade from "./facade";
-// import { Observer } from "./observer";
+import Subject, { Observer } from "./observer";
 
 // Iteration 1:
 
@@ -42,30 +42,29 @@ console.log(resultC);
 
 // Iteration 4:
 
-// console.log("--OBSERVER--");
-// class ConcreteObserver implements Observer {
-//   public update(data: any): void {
-//     console.log(`Received update with data: ${data}`);
-//   }
-// }
+console.log("--OBSERVER--");
+class ConcreteObserver implements Observer {
+  public update(data: any): void {
+    console.log(`Received update with data: ${data}`);
+  }
+}
 
-// const subject = new Subject();
+const subject = new Subject();
+const observer1 = new ConcreteObserver();
+const observer2 = new ConcreteObserver();
 
-// const observer1 = new ConcreteObserver();
-// const observer2 = new ConcreteObserver();
+subject.addObserver(observer1);
+subject.addObserver(observer2);
+subject.someBusinessLogic();
 
-// subject.addObserver(observer1);
-// subject.addObserver(observer2);
-
-// subject.someBusinessLogic();
 // Output:
 // Doing some business logic...
 // Received update with data: Some data to be sent to observers.
 // Received update with data: Some data to be sent to observers.
 
-// subject.removeObserver(observer1);
+subject.removeObserver(observer1);
+subject.someBusinessLogic();
 
-// subject.someBusinessLogic();
 // Output:
 // Doing some business logic...
 // Received update with data: Some data to be sent to observers.
